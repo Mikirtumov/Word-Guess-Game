@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Title</title>
 </head>
+
 <body>
-    
+        <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+              </div>
+    <ul class="list-group">
+
+        <li class="list-group-item">
+            <h1 class="text-center">The Psychic Game</h1>
+        </li>
+        <li class="list-group-item list-group-item-primary">
+            <p class="text-center">Guess what letter I'm thinkig of</p>
+        </li>
+        <li class="list-group-item list-group-item-success">
+            <p class="text-center">Wins: <span id="wins"></span></p>
+        </li>
+        <li class="list-group-item list-group-item-danger">
+            <p class="text-center">Losses: <span id="lose"></span></p>
+        </li>
+        <li class="list-group-item list-group-item-info">
+            <p class="text-center">Guesses Left: <span id="guesses"></span></p>
+        </li>
+        <li class="list-group-item list-group-item-dark">
+            <p class="text-center">Guessed so far: <span id="guessed"></span></p>
+        </li>
+    </ul>
+
+
+
+
+    <script src="./assets/javascript/game.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>
