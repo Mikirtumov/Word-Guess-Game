@@ -1,49 +1,59 @@
-var wins =0;
-var lose =0;
-var guesses =9;
-var guessed =[];
+// Create all vairables for game logic
+
+//wins
+var wins = 0;
+//loses
+var lose = 0;
+//guesses that are left
+var guesses = 9;
+//letters that were already guessed
+var guessed = [];
 
 
 
+// Computer choice bank (array of the alphebet)
+var computerChoice = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var compGuess = "";
 
-var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-
-var compGuess = Math.floor(Math.random() * computerChoices.length) + 1;
-
-var compGuessLetter = computerChoices[compGuess];
+// var compGuess = computerChoices[compGuess];
 
 console.log(compGuess);
-console.log(compGuessLetter);
 
-function restartGuess(){
-  Math.floor(Math.random() * computerChoices.length) + 1;
+
+// creating a function that starts/resets game
+function newGame() {
+  // reset the important game variables
+  guesses = 9;
+  guessed = [];
+
+  // randomly chooses a computer guess
+  var randomCompChoice = [Math.floor(Math.random() * computerChoice.length)];
+  compGuess = computerChoice[randomCompChoice];
 }
 
-function restart(){
-     guesses = 9;
-     guessed =[];   
-     restartGuess();
-}
-document.onkeyup = function(event) {
+// on key up event to know what letter is being hit
+document.onkeyup = function (event) {
 
-      var userGuess = event.key.toLowerCase();
-      guessed.push(userGuess);
-      
-      document.getElementById("guessed").innerHTML=guessed;
-      guesses--;
-      
-      
-      document.getElementById("guesses").innerHTML=guesses;
-      
-      if (guesses === 0){
-        lose++;
-        document.getElementById("lose").innerHTML=lose;
-        restart();
-      }
-      else if (userGuess === compGuessLetter){
-        wins++;
-        document.getElementById("wins").innerHTML=wins;
-        restart();
-      }
+  var userGuess = event.key.toLowerCase();
+  guessed.push(userGuess);
+
+  document.getElementById("guessed").innerHTML = guessed;
+  guesses--;
+
+
+  document.getElementById("guesses").innerHTML = guesses;
+
+  if (guesses === 0) {
+    lose++;
+    document.getElementById("lose").innerHTML = lose;
+    newGame();
+  }
+  else if (userGuess === compGuess) {
+    wins++;
+    document.getElementById("wins").innerHTML = wins;
+    newGame();
+  }
 }
+
+// runs new game fuction at initial load
+newGame();
